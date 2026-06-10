@@ -8,6 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="btn-sidebar-abrir" onclick="abrirSidebar()" aria-label="Abrir menu lateral">
+        &#9776; Menu
+    </button>
+
+    <div class="sidebar-overlay" id="overlay" onclick="fecharSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar" aria-label="Menu lateral">
+        <button class="btn-sidebar-fechar" onclick="fecharSidebar()" aria-label="Fechar menu">&times;</button>
+
+        <h3 class="sidebar-titulo">Biblioteca<br>Clarice Lispector</h3>
+        <hr class="sidebar-divisor">
+
+        <ul class="sidebar-menu">
+            <li><a href="#">Login no sistema</a></li>
+            <li><a href="#">Lista de livros</a></li>
+            <li><a href="#">Empréstimos</a></li>
+            <li><a href="#">Histórico de empréstimos</a></li>
+        </ul>
+
+        <hr class="sidebar-divisor">
+
+        <div class="sidebar-contato">
+            <p class="sidebar-label">Bibliotecário</p>
+            <p>Lázaro</p>
+            <p class="sidebar-label">E-mail</p>
+            <p><a href="mailto:lazarobiblio@gmail.com">lazarobiblio@gmail.com</a></p>
+            <p class="sidebar-label">Endereço</p>
+            <p>IFPE – Campus Afogados da Ingazeira, PE</p>
+        </div>
+    </nav>
+
+
     <div class="container-fluid" id="Banner">
         <div class="container">
             <img src="img/clarice-lispector.jpeg" class="BannerClarice">
@@ -54,7 +86,7 @@
         </section>
     </div>
     <br>
-    <div class="container">
+    <div class="container" id="txt_surgir">
         <h2 class="onde">Onde estamos?</h2>
         <br>
         <p>
@@ -62,12 +94,16 @@
         </p>
     </div>
     <br>
-    <div class="container">
+    <div class="container" id="txt_surgir">
         <h2 class="contato">Quais são os nossos contatos?</h2>
         <br>
         <p>
             E-mail do bibliotecário: lazarobiblio@gmail.com
         </p>
     </div>
+    <footer class="container-fluid" id="Footer">
+        <p>Biblioteca Clarice Lispector</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
