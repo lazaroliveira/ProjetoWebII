@@ -40,6 +40,22 @@ body{
     background-color: #8a624a21;
 }
 
+.btn-play {
+    background-color: #59392b;
+    color: #fff;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.btn-play:hover {
+    background-color: #7a4f38;
+}
+
 .btn-sidebar-abrir {
     position: fixed;
     top: 16px;
@@ -195,6 +211,33 @@ body{
     color: #7a4f38;
 }
 
+.player-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 4px;
+}
+
+.player-nome {
+    font-size: 12px;
+    color: #7a6058;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-player {
+    margin-top: 4px;
+}
+
+.sidebar-player-icon {
+    height: 150px;
+    border-radius: 6px;
+    width: 250px;
+}
+
+
 #txt_surgir{
     opacity: 0;
     transform: translateY(30px);
@@ -223,3 +266,4 @@ body{
         transform: translateY(0);
     }
 }
+
