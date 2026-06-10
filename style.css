@@ -2,7 +2,7 @@
 #ApresentacaoBiblio{
     text-align: center;
     color: #59392b;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-name: slidein;
     animation-iteration-count: 1;
 }
@@ -19,15 +19,73 @@
     height: 360px;
     border-radius: 50px;
     filter: drop-shadow(0 0 20px #59392b);
+    transition: all 0.3s ease;
+}
+
+.BannerClarice:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px #59392b);
 }
 
 .biblioteca-descricao{
     text-align: justify;
     text-justify: inter-word;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 3.2s ease-out forwards;
+
+}
+
+body{
+    background-color: #8a624a21;
+}
+
+.btn-sidebar-abrir {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 900;
+    background-color: #59392b;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(89,57,43,0.3);
+    transition: background-color 0.2s;
+}
+
+.btn-sidebar-abrir:hover {
+    background-color: #7a4f38;
+}
+
+.btn-sidebar-fechar {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #59392b;
+    cursor: pointer;
+    float: right;
+    line-height: 1;
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.btn-sidebar-fechar:hover {
+    color: #7a4f38;
 }
 
 .contato{
     color:#59392b;
+}
+
+#Footer{
+    background-color: #59392bb4;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
 }
 
 .onde{
@@ -36,14 +94,111 @@
 
 .Quem{
     color:#59392b;
-    animation-duration: 4s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 3.2s ease-out forwards;
 }
 
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+}
 
-body{
-    background-color: #8a624a21;
+.sidebar-overlay.visivel {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff8f5;
+    border-left: 2px solid #d4a68a;
+    z-index: 1100;
+    padding: 24px 20px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -4px 0 20px rgba(89,57,43,0.15);
+}
+
+.sidebar.aberta {
+    right: 0;
+}
+
+.sidebar-titulo {
+    color: #59392b;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    line-height: 1.4;
+    clear: both;
+}
+
+.sidebar-divisor {
+    border-color: #d4a68a;
+    margin: 14px 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 4px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 10px 12px;
+    color: #59392b;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #f0d9cc;
+    color: #3d2318;
+    text-decoration: none;
+}
+
+.sidebar-contato {
+    font-size: 14px;
+    color: #5a3d30;
+}
+
+.sidebar-contato p {
+    margin-bottom: 4px;
+}
+
+.sidebar-label {
+    font-weight: bold;
+    color: #59392b;
+    margin-top: 10px;
+    margin-bottom: 2px !important;
+}
+
+.sidebar-contato a {
+    color: #59392b;
+    word-break: break-all;
+}
+
+.sidebar-contato a:hover {
+    color: #7a4f38;
+}
+
+#txt_surgir{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 3.2s ease-out forwards;
 }
 
 /*ANIMAÇÕES DOS ITENS*/
@@ -55,5 +210,16 @@ body{
     to {
         margin-left: 0%;
         width: 100%;
+    }
+}
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
