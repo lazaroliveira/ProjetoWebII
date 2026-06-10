@@ -13,3 +13,15 @@ function fecharSidebar() {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') fecharSidebar();
 });
+
+function toggleMusica() {
+    const player = document.getElementById('player');
+    const btn = document.getElementById('btn-play');
+    if (player.paused) {
+        player.play();
+        btn.textContent = '⏸ Pause';
+    } else {
+        player.pause();
+        btn.textContent = '▶ Play';
+    }
+}
