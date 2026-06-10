@@ -37,6 +37,21 @@
             <p class="sidebar-label">Endereço</p>
             <p>IFPE – Campus Afogados da Ingazeira, PE</p>
         </div>
+
+        <hr class="sidebar-divisor">
+
+        <div class="sidebar-player">
+        <p class="sidebar-label">Playlist do bibliotecário :D</p><br>
+        <img src="img/playlist.jpg" alt="Ícone de música" class="sidebar-player-icon">
+        <audio id="player" src="musica/playlist.mp3"></audio>
+
+        <div class="player-controles">
+            <button onclick="toggleMusica()" id="btn-play" class="btn-play">▶ Play</button>
+            <input type="range" id="volume" min="0" max="1" step="0.05" value="0.5"
+            oninput="document.getElementById('player').volume = this.value"
+            title="Volume">
+        </div>
+        </div>
     </nav>
 
 
@@ -46,7 +61,7 @@
         </div>
         
     </div>
-    <hr class="sidebar-divisor">
+    <hr>
     <div class="container">
         <h1 id="ApresentacaoBiblio">Biblioteca Clarice Lispector</h1> 
         <br>
