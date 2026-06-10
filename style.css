@@ -1,0 +1,59 @@
+/*CLASSES DO SITE*/
+#ApresentacaoBiblio{
+    text-align: center;
+    color: #59392b;
+    animation-duration: 4s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+}
+
+#Banner{
+    align-items: center;
+    background-color: #ffc6ae12;
+}
+
+.BannerClarice{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 1100px;
+    height: 360px;
+    border-radius: 50px;
+    filter: drop-shadow(0 0 20px #59392b);
+}
+
+.biblioteca-descricao{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.contato{
+    color:#59392b;
+}
+
+.onde{
+    color:#59392b;
+}
+
+.Quem{
+    color:#59392b;
+    animation-duration: 4s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+}
+
+
+body{
+    background-color: #8a624a21;
+}
+
+/*ANIMAÇÕES DOS ITENS*/
+@keyframes slidein {
+    from {
+        margin-right: 100%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
