@@ -14,6 +14,15 @@ $capas = [
     'A Paixão Segundo G. H'     => 'img/APaixao.jpg',
     'A Maçã no Escuro'          => 'img/AMaca.jpg',
 ];
+
+$descricoes = [
+    'A hora da estrela'         => 'livrosdesc/hora.html',
+    'Perto do coração selvagem' => 'livrosdesc/perto.html',
+    'Água Viva'                 => 'livrosdesc/agua.html',
+    'A Via Crucis do Corpo'     => 'livrosdesc/avia.html',
+    'A Paixão Segundo G. H'     => 'livrosdesc/apaixao.html',
+    'A Maçã no Escuro'          => 'livrosdesc/amaca.html',
+];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,8 +52,15 @@ $capas = [
             <?php foreach ($livros as $livro): ?>
             <div class="col-sm-6 col-md-4 mb-4">
                 <div class="livro-card">
-                    <?php $capa = $capas[$livro['titulo']] ?? 'img/bannerClarice.png'; ?>
-                    <img src="<?= $capa ?>" alt="Capa de <?= htmlspecialchars($livro['titulo']) ?>">
+                    <?php
+                        $capa = $capas[$livro['titulo']] ?? 'img/bannerClarice.png';
+                        $desc = $descricoes[$livro['titulo']] ?? '#';
+                    ?>
+                    <a href="<?= $desc ?>">
+                        <img src="<?= $capa ?>"
+                             alt="Capa de <?= htmlspecialchars($livro['titulo']) ?>"
+                             style="cursor: pointer;">
+                    </a>
                     <div class="livro-info">
                         <p class="livro-titulo"><?= htmlspecialchars($livro['titulo']) ?></p>
                         <p class="livro-autor"><?= htmlspecialchars($livro['autor']) ?></p>
