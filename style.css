@@ -1,18 +1,26 @@
-/*CLASSES DO SITE*/
-#ApresentacaoBiblio{
-    text-align: center;
-    color: #59392b;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
+/* ── Base ── */
+body {
+    background-color: #8a624a21;
 }
 
-#Banner{
+/* ── Animações ── */
+@keyframes slidein {
+    from { margin-right: 100%; width: 300%; }
+    to   { margin-left: 0%;   width: 100%; }
+}
+
+@keyframes surgir {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Index — Banner ── */
+#Banner {
     align-items: center;
     background-color: #ffc6ae12;
 }
 
-.BannerClarice{
+.BannerClarice {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 1100px;
@@ -27,35 +35,49 @@
     filter: drop-shadow(0 0 30px #59392b);
 }
 
-.biblioteca-descricao{
+/* ── Index — Textos ── */
+#ApresentacaoBiblio {
+    text-align: center;
+    color: #59392b;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+}
+
+.biblioteca-descricao {
     text-align: justify;
     text-justify: inter-word;
     opacity: 0;
     transform: translateY(30px);
     animation: surgir 3.2s ease-out forwards;
-
 }
 
-body{
-    background-color: #8a624a21;
+.Quem {
+    color: #59392b;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 3.2s ease-out forwards;
 }
 
-.btn-play {
-    background-color: #59392b;
-    color: #fff;
-    border: none;
-    padding: 7px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    white-space: nowrap;
-    transition: background-color 0.2s;
+.onde  { color: #59392b; }
+.contato { color: #59392b; }
+
+#txt_surgir {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 3.2s ease-out forwards;
 }
 
-.btn-play:hover {
-    background-color: #7a4f38;
+/* ── Footer ── */
+#Footer {
+    background-color: #59392bb4;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
 }
 
+/* ── Sidebar (index) ── */
 .btn-sidebar-abrir {
     position: fixed;
     top: 16px;
@@ -71,10 +93,7 @@ body{
     box-shadow: 0 2px 8px rgba(89,57,43,0.3);
     transition: background-color 0.2s;
 }
-
-.btn-sidebar-abrir:hover {
-    background-color: #7a4f38;
-}
+.btn-sidebar-abrir:hover { background-color: #7a4f38; }
 
 .btn-sidebar-fechar {
     background: none;
@@ -87,45 +106,16 @@ body{
     padding: 0;
     margin-bottom: 8px;
 }
-
-.btn-sidebar-fechar:hover {
-    color: #7a4f38;
-}
-
-.contato{
-    color:#59392b;
-}
-
-#Footer{
-    background-color: #59392bb4;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 8px;
-}
-
-.onde{
-    color:#59392b;
-}
-
-.Quem{
-    color:#59392b;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: surgir 3.2s ease-out forwards;
-}
+.btn-sidebar-fechar:hover { color: #7a4f38; }
 
 .sidebar-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0,0,0,0.45);
     z-index: 1000;
 }
-
-.sidebar-overlay.visivel {
-    display: block;
-}
+.sidebar-overlay.visivel { display: block; }
 
 .sidebar {
     position: fixed;
@@ -141,10 +131,7 @@ body{
     overflow-y: auto;
     box-shadow: -4px 0 20px rgba(89,57,43,0.15);
 }
-
-.sidebar.aberta {
-    right: 0;
-}
+.sidebar.aberta { right: 0; }
 
 .sidebar-titulo {
     color: #59392b;
@@ -165,11 +152,7 @@ body{
     padding: 0;
     margin: 0 0 8px 0;
 }
-
-.sidebar-menu li {
-    margin-bottom: 4px;
-}
-
+.sidebar-menu li { margin-bottom: 4px; }
 .sidebar-menu a {
     display: block;
     padding: 10px 12px;
@@ -179,45 +162,27 @@ body{
     font-size: 15px;
     transition: background-color 0.2s;
 }
-
 .sidebar-menu a:hover {
     background-color: #f0d9cc;
     color: #3d2318;
     text-decoration: none;
 }
 
-.sidebar-contato {
-    font-size: 14px;
-    color: #5a3d30;
-}
-
-.sidebar-contato p {
-    margin-bottom: 4px;
-}
-
+.sidebar-contato { font-size: 14px; color: #5a3d30; }
+.sidebar-contato p { margin-bottom: 4px; }
 .sidebar-label {
     font-weight: bold;
     color: #59392b;
     margin-top: 10px;
     margin-bottom: 2px !important;
 }
+.sidebar-contato a { color: #59392b; word-break: break-all; }
+.sidebar-contato a:hover { color: #7a4f38; }
 
-.sidebar-contato a {
-    color: #59392b;
-    word-break: break-all;
-}
-
-.sidebar-contato a:hover {
-    color: #7a4f38;
-}
-
-.player-controles {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 8px 0 4px;
-}
-
+/* ── Player de música ── */
+.sidebar-player { margin-top: 4px; }
+.sidebar-player-icon { height: 150px; border-radius: 6px; width: 250px; }
+.player-controles { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
 .player-nome {
     font-size: 12px;
     color: #7a6058;
@@ -227,43 +192,156 @@ body{
     white-space: nowrap;
 }
 
-.sidebar-player {
-    margin-top: 4px;
-}
-
-.sidebar-player-icon {
-    height: 150px;
+/* ── Botões globais ── */
+.btn-play {
+    background-color: #59392b;
+    color: #fff;
+    border: none;
+    padding: 7px 14px;
     border-radius: 6px;
-    width: 250px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+.btn-play:hover { background-color: #7a4f38; }
+
+/* ── Login ── */
+.login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-#txt_surgir{
-    opacity: 0;
-    transform: translateY(30px);
-    animation: surgir 3.2s ease-out forwards;
+.login-card {
+    background: #fff8f5;
+    border: 1px solid #d4a68a;
+    border-radius: 14px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 24px rgba(89,57,43,0.15);
+}
+.login-card h2 {
+    color: #59392b;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+}
+.login-card label { color: #59392b; font-weight: bold; }
+.login-card input { border: 1px solid #d4a68a; border-radius: 6px; }
+.login-card input:focus {
+    border-color: #59392b;
+    box-shadow: 0 0 0 2px rgba(89,57,43,0.15);
 }
 
-/*ANIMAÇÕES DOS ITENS*/
-@keyframes slidein {
-    from {
-        margin-right: 100%;
-        width: 300%;
-    }
-    to {
-        margin-left: 0%;
-        width: 100%;
-    }
+.btn-login {
+    background-color: #59392b;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-login:hover { background-color: #7a4f38; }
+
+.voltar { text-align: center; margin-top: 14px; }
+.voltar a { color: #59392b; font-size: 0.9rem; }
+.voltar a:hover { color: #7a4f38; }
+
+/* ── Livros (acervo) ── */
+.pagina-titulo { color: #59392b; margin: 30px 0 8px; }
+
+.badge-ativos {
+    background-color: #59392b;
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
 }
 
-@keyframes surgir {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.livro-card {
+    background: #fff8f5;
+    border: 1px solid #d4a68a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    height: 100%;
+}
+.livro-card:hover { box-shadow: 0 4px 16px rgba(89,57,43,0.2); }
+.livro-card img { width: 100%; height: 220px; object-fit: cover; }
+
+.livro-info { padding: 14px; }
+.livro-titulo { font-weight: bold; color: #59392b; font-size: 1rem; margin-bottom: 4px; }
+.livro-autor  { color: #7a6058; font-size: 0.88rem; margin-bottom: 12px; }
+
+.status-disponivel {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.status-indisponivel {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
+.btn-emprestar {
+    background-color: #59392b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+.btn-emprestar:hover    { background-color: #7a4f38; }
+.btn-emprestar:disabled { background-color: #ccc; cursor: not-allowed; }
+
+/* ── Histórico ── */
+.tabela-historico thead { background-color: #59392b; color: #fff; }
+.tabela-historico tbody tr:hover { background-color: #fff8f5; }
+
+.status-devolvido {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.status-posse {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-devolver {
+    background-color: #59392b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-devolver:hover { background-color: #7a4f38; }
+
+.vazio { text-align: center; color: #7a6058; padding: 30px; }
