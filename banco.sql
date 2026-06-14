@@ -27,9 +27,9 @@ CREATE TABLE emprestimos (
 );
 
 INSERT INTO usuarios (nome, usuario, senha, perfil) VALUES
-('Lázaro Tenório','lazaro', 'lazaro123', 'aluno'),
+('Lázaro Tenório','lazaro', 'lazaro123', 'bibliotecário'),
 ('Lairson Alencar','lairson',  'lairson123', 'professor'),
-('Elizabete Silva','elizabete', 'elizabete123', 'aluno');
+('Elizabete Silva','elizabete', 'elizabete123', 'aluna');
 
 INSERT INTO livros (titulo, autor) VALUES
 ('A hora da estrela','Clarice Lispector'),
