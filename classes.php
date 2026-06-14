@@ -19,10 +19,10 @@ class Auth
         $user = $stmt->fetch();
 
         if ($user && $password == $user['senha']) {
-            $_SESSION['usuario_id'] = $user['id'];
-            $_SESSION['usuario'] = $user['nome'];
+            $_SESSION['usuario_id']     = $user['id'];
+            $_SESSION['usuario']        = $user['nome'];
             $_SESSION['usuario_perfil'] = $user['perfil'];
-            $_SESSION['logado'] = true;
+            $_SESSION['logado']         = true;
             return true;
         }
 
@@ -101,7 +101,7 @@ trait ConsultaAcervo
     {
         $stmt = $pdo->prepare("
             SELECT
-                e.id AS emprestimo_id,
+                e.id              AS emprestimo_id,
                 l.titulo,
                 l.autor,
                 e.data_emprestimo,
